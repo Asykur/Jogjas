@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "444043849539",
+    "firebase_url": "https://jogjas-3b484.firebaseio.com",
+    "project_id": "jogjas-3b484",
+    "storage_bucket": "jogjas-3b484.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444043849539:android:3a15c47e62bac1cb",
+        "android_client_info": {
+          "package_name": "com.example.jogjas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444043849539-2s9fqlqgbnqrpam42hmuj0ijnp7mau3v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jogjas",
+            "certificate_hash": "a7cc1105fb255b41a7cfd7494cad8efb44ea126c"
+          }
+        },
+        {
+          "client_id": "444043849539-ah2l7ad6aleh2a8pp2m6458c20envlis.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg6WP2iwOS8NyWK7Fp-ByLhpsnpguJp9E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "444043849539-ah2l7ad6aleh2a8pp2m6458c20envlis.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_bg"
+    tools:context=".activity.LoginRegActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:id="@+id/linLogin"
+        android:animateLayoutChanges="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/sign_in"
+            android:textColor="@color/blue"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <com.sdsmdg.harjot.materialshadows.MaterialShadowViewWrapper
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_white_background"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="20dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/etEmail"
+                android:inputType="textEmailAddress"
+                android:layout_margin="10dp"
+                android:elevation="5dp"
+                android:hint="@string/email"
+                android:paddingStart="20dp" />
+        </com.sdsmdg.harjot.materialshadows.MaterialShadowViewWrapper>
+
+        <com.sdsmdg.harjot.materialshadows.MaterialShadowViewWrapper
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_white_background"
+                android:drawableStart="@drawable/ic_password"
+                android:drawablePadding="20dp"
+                android:layout_margin="10dp"
+                android:id="@+id/etPassword"
+                android:inputType="textPassword"
+                android:elevation="5dp"
+                android:hint="@string/password"
+                android:paddingStart="20dp" />
+        </com.sdsmdg.harjot.materialshadows.MaterialShadowViewWrapper>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_blue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/btnSignIn"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/sign_in"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:text="@string/belum_punya_akun"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_now"
+            android:id="@+id/tvSignup"
+            android:padding="10dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+<!--REGISTER-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:id="@+id/linSignUp"
+        android:animateLayoutChanges="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/sign_up"
+            android:textColor="@color/blue"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <com.sdsmdg.harjot.materialshadows.MaterialShadowViewWrapper
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_white_background"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="20dp"
+                android:elevation="5dp"
+                android:inputType="textEmailAddress"
+                android:layout_margin="10dp"
+                android:id="@+id/etEmailReg"
+                android:hint="@string/email"
+                android:paddingStart="20dp" />
+        </com.sdsmdg.harjot.materialshadows.MaterialShadowViewWrapper>
+
+        <com.sdsmdg.harjot.materialshadows.MaterialShadowViewWrapper
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:elevation="5dp"
+                android:layout_margin="10dp"
+                android:inputType="textPassword"
+                android:background="@drawable/rounded_white_background"
+                android:drawableStart="@drawable/ic_password"
+                android:drawablePadding="20dp"
+                android:id="@+id/etPasswordReg"
+                android:hint="@string/password"
+                android:paddingStart="20dp" />
+        </com.sdsmdg.harjot.materialshadows.MaterialShadowViewWrapper>
+
+        <com.sdsmdg.harjot.materialshadows.MaterialShadowViewWrapper
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_white_background"
+                android:drawableStart="@drawable/ic_password"
+                android:drawablePadding="20dp"
+                android:layout_margin="10dp"
+                android:inputType="textPassword"
+                android:elevation="5dp"
+                android:id="@+id/etConfirmPasswordReg"
+                android:hint="@string/konfirmasi_password"
+                android:paddingStart="20dp" />
+        </com.sdsmdg.harjot.materialshadows.MaterialShadowViewWrapper>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_blue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:id="@+id/btnSignUp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/sign_up"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:text="@string/sudah_punya_akun"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in"
+            android:id="@+id/tvlogin"
+            android:padding="10dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linLogin"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal">
+
+        <ProgressBar
+            android:id="@+id/pdLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linSignUp"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal">
+
+        <ProgressBar
+            android:id="@+id/pdSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>
