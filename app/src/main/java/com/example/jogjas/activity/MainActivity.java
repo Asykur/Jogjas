@@ -67,23 +67,20 @@ public class MainActivity extends AppCompatActivity {
                             AlertDialog.Builder builder= new AlertDialog.Builder(MainActivity.this);
                             builder.setCancelable(false);
                             builder.setMessage(R.string.wording_signout);
-                            builder.setPositiveButton(R.string.ya, null);
+                            builder.setPositiveButton(R.string.ya, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    firebaseAuth.signOut();
+                                    AppPreference.setPreferenceBoolean(MainActivity.this,AppPreference.LOGIN,false);
+                                    finish();
+                                }
+                            });
                             builder.setNegativeButton(R.string.tidak,null);
                             final AlertDialog alertDialog = builder.create();
                             alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
                                 @Override
                                 public void onShow(final DialogInterface dialog) {
-                                    Button buttonPositive = ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_NEGATIVE);
-                                    Button buttonNegative = ((AlertDialog)dialog).getButton(AlertDialog.BUTTON_NEGATIVE);
-
-                                    buttonPositive.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            firebaseAuth.signOut();
-                                            AppPreference.setPreferenceBoolean(MainActivity.this,AppPreference.LOGIN,false);
-                                            finishAffinity();
-                                        }
-                                    });
+                                    Button buttonNegative = ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_NEGATIVE);
 
                                     buttonNegative.setOnClickListener(new View.OnClickListener() {
                                         @Override
