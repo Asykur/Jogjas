@@ -2,10 +2,9 @@ package com.example.jogjas.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.annotation.Nullable;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
@@ -13,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.example.jogjas.R;
 import com.example.jogjas.adapter.DataAdapter;
@@ -22,10 +20,6 @@ import com.example.jogjas.retrofit.ApiResponse;
 import com.example.jogjas.retrofit.ServicesFactory;
 import com.example.jogjas.utils.AppPreference;
 import com.google.firebase.auth.FirebaseAuth;
-import com.yarolegovich.discretescrollview.DSVOrientation;
-import com.yarolegovich.discretescrollview.DiscreteScrollView;
-import com.yarolegovich.discretescrollview.InfiniteScrollAdapter;
-import com.yarolegovich.discretescrollview.transform.ScaleTransformer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recyclerView =(RecyclerView) findViewById(R.id.rvLocation);
+        recyclerView = (RecyclerView) findViewById(R.id.rvLocation);
         btnMenu = (ImageButton) findViewById(R.id.btnMenu);
         firebaseAuth = FirebaseAuth.getInstance();
         initRecycler();
@@ -57,25 +51,25 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 PopupMenu popup = new PopupMenu(MainActivity.this, btnMenu);
                 popup.getMenuInflater().inflate(R.menu.main_menu, popup.getMenu());
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener(){
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
-                        if (menuItem.getItemId() == R.id.about_menu){
-                            startActivity(new Intent(MainActivity.this,AboutActivity.class));
-                        }else {
-                            AlertDialog.Builder builder= new AlertDialog.Builder(MainActivity.this);
+                        if (menuItem.getItemId() == R.id.about_menu) {
+                            startActivity(new Intent(MainActivity.this, AboutActivity.class));
+                        } else {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                             builder.setCancelable(false);
                             builder.setMessage(R.string.wording_signout);
                             builder.setPositiveButton(R.string.ya, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     firebaseAuth.signOut();
-                                    AppPreference.setPreferenceBoolean(MainActivity.this,AppPreference.LOGIN,false);
+                                    AppPreference.setPreferenceBoolean(MainActivity.this, AppPreference.LOGIN, false);
                                     finish();
                                 }
                             });
-                            builder.setNegativeButton(R.string.tidak,null);
+                            builder.setNegativeButton(R.string.tidak, null);
                             final AlertDialog alertDialog = builder.create();
                             alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
                                 @Override
@@ -104,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
-        DataAdapter ar = new DataAdapter(dataList,MainActivity.this);
+        DataAdapter ar = new DataAdapter(dataList, MainActivity.this);
         recyclerView.setAdapter(ar);
     }
 
@@ -113,9 +107,9 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<ApiResponse<List<DataLocation>>>() {
             @Override
             public void onResponse(Call<ApiResponse<List<DataLocation>>> call, Response<ApiResponse<List<DataLocation>>> response) {
-                if (response.isSuccessful()&& response.body().isSuccessfull()){
+                if (response.isSuccessful() && response.body().isSuccessfull()) {
                     List<DataLocation> datas = response.body().data;
-                    if (datas.size()!=0){
+                    if (datas.size() != 0) {
                         dataList.clear();
                         dataList.addAll(datas);
                         recyclerView.getAdapter().notifyDataSetChanged();

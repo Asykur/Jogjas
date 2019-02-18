@@ -14,7 +14,7 @@
     <string name="sign_up">SIGN UP</string>
     <string name="konfirmasi_password">Konfirmasi Password</string>
     <string name="sign_in">SIGN IN</string>
-    <string name="malformate_email">Format email salah</string>
+    <string name="malformat_email">Format email salah</string>
     <string name="explore_jogja">Explore Jogja</string>
     <string name="wording_referensi">Referensi tempat wisata di Jogja terpopuler yang bisa kamu kunjungi</string>
     <string name="jogjas_app">JOGJAS App</string>
@@ -24,4 +24,6 @@
     <string name="tidak">TIDAK</string>
     <string name="wording_signout">Apakah anda yakin ingin keluar?</string>
     <string name="pwd_tdak_sama">Password tidak sama</string>
+    <string name="wording_gagal_register">Registrasi gagal, cek koneksi internet</string>
+    <string name="wording_gagal_signin">Sign in gagal, periksa koneksi internet</string>
 </resources>
